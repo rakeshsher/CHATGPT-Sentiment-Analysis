@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Sentiment Analysis</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d0d0d, #001f3f, #00ffcc);
+            background-size: 300% 300%;
+            animation: gradientBG 6s infinite alternate;
+            color: #00ffcc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            padding: 50px;
+        }
+        .animated-title {
+            font-size: 3rem;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+            to { text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99; }
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-in {
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideIn 1.5s forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .predict-btn {
+            background: linear-gradient(90deg, #00ffcc, #00ff99);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0d0d0d;
+            cursor: pointer;
+            border-radius: 10px;
+            text-transform: uppercase;
+            position: relative;
+            margin-top: 30px;
+            animation: pulse 1.5s infinite;
+        }
+        .predict-btn:hover {
+            background: linear-gradient(90deg, #00ff99, #00ffcc);
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px #00ffcc; }
+            50% { box-shadow: 0 0 20px #00ff99; }
+            100% { box-shadow: 0 0 10px #00ffcc; }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".predict-btn").addEventListener("click", function() {
+                window.location.href = "/predict";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animated-title">ChatGPT Sentiment Analysis</h1>
+            <p class="fade-in">Analyze the sentiment of ChatGPT responses in real time with AI-driven insights.</p>
+        </header>
+        
+        <main>
+            <div class="chatgpt-info slide-in">
+                <h2>What is ChatGPT?</h2>
+                <p>ChatGPT is an AI language model designed to generate human-like text responses based on input. It can assist in various tasks like answering questions, content creation, and even sentiment analysis.</p>
+            </div>
+            
+            <button class="predict-btn">Predict Analysis</button>
+        </main>
+    </div>
+</body>
+</html>
